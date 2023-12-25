@@ -34,5 +34,11 @@ getIngredient(index:number){
     this.ingredientsChanged.next(this.ingredients.slice());
   }
  
+  updateIngredient( index: number, newIngredient:Ingredient){
+    console.log(index)
+    console.log(newIngredient);
+    this.ingredients[index]=newIngredient;
+    this.ingredientsChanged.next(this.ingredients.slice());
+  }
   
 }

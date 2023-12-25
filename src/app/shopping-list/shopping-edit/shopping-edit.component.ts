@@ -40,7 +40,7 @@ export class ShoppingEditComponent implements OnInit , OnDestroy {
       .subscribe(
         (index:number) =>{
           this.editItemIndex = index;
-          console.log(this.editItemIndex);
+          // console.log(this.editItemIndex);
           this.editMode =true;
         
           this.editedItem = this.slService.getIngredient(index);
@@ -55,12 +55,17 @@ export class ShoppingEditComponent implements OnInit , OnDestroy {
   }
 
   onAddItem(form:NgForm) {
-    console.log(form);
+    // console.log(form);
     const value = form.value;
     // const ingName = this.nameInputRef.nativeElement.value;
     // const ingAmount = this.amountInputRef.nativeElement.value;
     const newIngredient = new Ingredient(value.name, value.amount);
-    this.slService.addIngredient(newIngredient);
+ if(this.editMode){
+  this.slService.updateIngredient(this.editItemIndex, newIngredient);
+ }else {
+   this.slService.addIngredient(newIngredient);
+ }
+
   }
 
 
