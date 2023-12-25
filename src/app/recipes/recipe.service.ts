@@ -38,6 +38,12 @@ export class RecipeService {
     return this.recipes.slice();
   }
 
+
+  getRecipes(index:number){
+    return this.recipes[index];
+
+  }
+
   
   // send to recipe-detail to shoping list 
   addIngredientsToShoppingList( ingredient:Ingredient[]){

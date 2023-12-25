@@ -1,22 +1,24 @@
-<a
-href="#"
-class="list-group-item clearfix"
-(click)="onSelectedItem()"
->
 
-<div class="col-sm">
-  <div class="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
-    <div class="col p-4 d-flex flex-column position-static">
+<div class="list-group">
 
-      <h3 class="mb-0">{{recipe.name}}</h3>
-      <p class="card-text mb-auto">{{recipe.description}}</p>
+  <a class="list-group-item list-group-item-action " aria-current="true"
+     style="cursor: pointer;"
+      routerLinkActive="active"  [routerLink]="[index]">
+   
+   
+    <div class="d-flex w-100 justify-content-between">
+      <h4 class="mb-1" >{{recipe.name}}</h4>
+      
+      <!-- <h4 class="list-group-item-text">{{recipe.description}}</h4> -->
+      <!-- <h5 class="mb-1">List group item heading</h5> -->
+      <small><img [src]="recipe.imagePath" 
+        alt="{{recipe.name}}"
+        style="max-height: 60px;"
+        class="img-responsive"></small>
     </div>
-    <div class="col-auto d-none d-lg-block">
-      <img src="{{recipe.imagePath}}"
-      [src]="recipe.imagePath" alt="{{recipe.name}}"
-      style="max-height: 100px;"
-      class="img-responsive">
-    </div>
-  </div>
+  
+    <p class="mb-1">{{recipe.description}}</p>
+    <!-- <small>And some small print.</small> -->
+  </a>
+
 </div>
-</a>
