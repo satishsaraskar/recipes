@@ -15,7 +15,7 @@ export class RecipeEditComponent implements OnInit {
   editMode = false;
   recipeForm: FormGroup;
 
-  
+
 
   get recipeControls() {
     return (this.recipeForm.get('ingredients') as FormArray).controls
@@ -51,7 +51,7 @@ export class RecipeEditComponent implements OnInit {
     } else {
       this.recipeService.addRecipe(this.recipeForm.value);
     }
-    // this.onCancel();
+    this.onCancel();
   }
 
   onAddIngredient() {
